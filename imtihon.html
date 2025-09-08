@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="uz" class="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TODO App</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            purple: {
+              50: '#f5f3ff',
+              100: '#ede9fe',
+              200: '#ddd6fe',
+              300: '#c4b5fd',
+              400: '#a78bfa',
+              500: '#8b5cf6',
+              600: '#7c3aed',
+              700: '#6d28d9',
+              800: '#5b21b6',
+              900: '#4c1d95',
+              950: '#2e1065',
+            },
+            'mountain-light': '#e0e7ff',
+            'mountain-dark': '#1e1b4b',
+          },
+          fontFamily: {
+            sans: ['Inter', 'system-ui', 'sans-serif'],
+          },
+          boxShadow: {
+            'soft': '0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)',
+            'modal': '0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)',
+          },
+        },
+      },
+    }
+  </script>
+  <link rel="stylesheet" href="css/output.css">
+  <link rel="stylesheet" href="css/todo-style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+</head>
+<body class="bg-gray-50 dark:bg-gray-900 text-gray-900 dark:text-gray-100 font-sans antialiased min-h-screen">
+  <div class="bg-mountains relative flex flex-col min-h-screen">
+    <div class="relative z-10 container mx-auto px-4 py-16 md:py-20 max-w-4xl">
+      
+      <div class="flex items-center justify-between mb-16 md:mb-20">
+        <h1 class="text-5xl md:text-7xl font-bold text-white drop-shadow-lg z-20 relative">TODO</h1>
+        <button id="theme-toggle" class="relative z-20 flex items-center justify-center w-10 h-10 md:w-12 md:h-12 bg-white/10 dark:bg-white/20 rounded-full backdrop-blur-sm hover:bg-white/20 transition-all duration-300 ml-auto md:ml-80">
+
+          <svg id="sun-icon" class="w-5 h-5 md:w-6 md:h-6 text-yellow-300 hidden dark:block" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path>
+          </svg>
+          <svg id="moon-icon" class="w-5 h-5 md:w-6 md:h-6 text-gray-300 block dark:hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path>
+          </svg>
+        </button>
+      </div>
+      <div class="relative z-10 bg-white/80 dark:bg-gray-800/80 backdrop-blur-md rounded-2xl shadow-xl p-6 md:p-8 w-full max-w-2xl mx-auto mb-8">
+
+        <div class="flex items-center mb-6">
+          <div class="flex-1 relative">
+            <input
+              id="new-todo-input"
+              type="text"
+              placeholder="Create a new todo..."
+              class="w-full px-6 py-4 text-lg bg-transparent border-b-2 border-gray-300 dark:border-gray-600 focus:border-purple-500 focus:outline-none transition-colors duration-300 placeholder-gray-500 dark:placeholder-gray-400"
+              autocomplete="off"
+            />
+        
+            <div class="absolute right-0 top-1/2 -translate-y-1/2 w-6 h-6 bg-purple-500 rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+              <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"></path>
+              </svg>
+            </div>
+          </div>
+        </div>
+        <p id="error-message" class="text-red-500 text-sm hidden mb-4">Iltimos, todo uchun biror narsa yozing.</p>
+
+      </div>
+
+      <div id="todo-list-container" class="relative z-10 bg-white/80 dark:bg-gray-800/80 backdrop-blur-md rounded-2xl shadow-xl p-6 md:p-8 w-full max-w-2xl mx-auto space-y-4 max-h-96 overflow-y-auto">
+      </div>
+
+    </div>
+  </div>
+
+<script src="js/app.js"></script>
+</body>
+</html>

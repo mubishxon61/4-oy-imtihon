@@ -1,0 +1,14 @@
+
+#todoSection::-webkit-scrollbar {
+  width: 4px; 
+}
+#todoSection::-webkit-scrollbar-track {
+  background: transparent;
+}
+#todoSection::-webkit-scrollbar-thumb {
+  background-color: #c0c0c0; 
+  border-radius: 4px;
+}
+body.dark #todoSection::-webkit-scrollbar-thumb {
+  background-color: #333;
+}

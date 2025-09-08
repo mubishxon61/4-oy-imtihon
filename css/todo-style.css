@@ -1,0 +1,34 @@
+    .bg-mountains {
+      background-image: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      position: relative;
+    }
+    .bg-mountains::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-image: 
+        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 300'%3E%3Cpath d='M0,300V150L200,100L400,150L600,50L800,150L1000,100L1200,150V300Z' fill='rgba(255,255,255,0.1)' opacity='0.3'/%3E%3C/svg%3E");
+      background-size: cover;
+      background-position: center bottom;
+      z-index: 1;
+    }
+    .dark .bg-mountains::before {
+      background-image: 
+        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 300'%3E%3Cpath d='M0,300V150L200,100L400,150L600,50L800,150L1000,100L1200,150V300Z' fill='rgba(0,0,0,0.2)' opacity='0.5'/%3E%3C/svg%3E");
+    }
+    .modal-open {
+      overflow: hidden;
+    }
+    .todo-item {
+      transition: all 0.2s ease;
+    }
+    .todo-item:hover {
+      transform: translateY(-1px);
+    }
+    .input-focus {
+      border-color: #8b5cf6 !important;
+      box-shadow: 0 0 0 3px rgba(139, 92, 246, 0.1);
+    }
